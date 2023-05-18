@@ -1,0 +1,11 @@
+{
+  "name": "boticario-regression-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "login": "robot -d Results ./Clients/Boticario.robot"
+  },
+  "author": "",
+  "license": "ISC"
+}
