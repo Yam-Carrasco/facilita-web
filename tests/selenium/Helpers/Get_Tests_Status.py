@@ -15,6 +15,6 @@ def get_test_status(path):
         elif test.status == 'FAIL':
             failed_tests.append(test.name)
 
-    message = f'Resultados dos Testes:\nPassados: {len(passed_tests)} {passed_tests}\nFalhados: {len(failed_tests)} {failed_tests}'
+    message = f'Resultados dos Testes WEB:\nPassados: {len(passed_tests)} {passed_tests}\nFalhados: {len(failed_tests)} {failed_tests}'
 
     return message
