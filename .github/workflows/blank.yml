@@ -48,4 +48,9 @@ jobs:
 
       - name: Run Curl Message To Slack
         run: robot ./tests/selenium/Helpers/Curl_Slack.robot
+        
+      - name: Call merge action
+        uses: Yam-Carrasco/bff-back-end/.github/workflows/blank.yml@main
+        with:
+          message: "Pull request merged"
 
