@@ -51,6 +51,3 @@ jobs:
         
       - name: Call merge action
         uses: Yam-Carrasco/bff-back-end/.github/workflows/blank.yml@main
-        with:
-          message: "Pull request merged"
-
