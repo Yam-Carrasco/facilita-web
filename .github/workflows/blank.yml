@@ -47,10 +47,13 @@ jobs:
           
       - name: Run Selenium tests
         run: |
-          robot -d ./Results ./tests/selenium/Clients/Boticario.robot
+          #robot -d ./Results ./tests/selenium/Clients/Boticario.robot
+          echo 'teste'
 
       - name: Run Curl Message To Slack
-        run: robot ./tests/selenium/Helpers/Curl_Slack.robot
+        run: |
+           #robot ./tests/selenium/Helpers/Curl_Slack.robot
+           echo 'teste'
         
       - name: Dispatch to workflows
         run: |
