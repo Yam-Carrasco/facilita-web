@@ -22,6 +22,10 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     # Steps represent a sequence of tasks that will be executed as part of the job
+    strategy:
+      matrix:
+        repo: ['Yam-Carrasco/bff-back-end']
+    timeout-minutes: 5
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
@@ -49,3 +53,10 @@ jobs:
 
       - name: Run Curl Message To Slack
         run: robot ./tests/selenium/Helpers/Curl_Slack.robot
+        
+      - name: Dispatch to workflows
+        run: |
+            curl -H "Accept: application/vnd.github.everest-preview+json" \
+            -H "Authorization: token ${{ secrets.TOKEN_OTHER_REPO }}" \
+            --request POST \
+            --data '{"event_type": "Triggered by API", "client_payload": { "foo": "bar" }}' https://api.github.com/repos/${{ matrix.repo }}/dispatches
